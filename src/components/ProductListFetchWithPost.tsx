@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { ProductType } from "../types/products";
 import { jsonUrl } from "../constants";
 import ListComponent from "./ListComponent";
+import { generateRandomStringId } from "../utils/helpers";
 
 const ProductListFetchWithPost = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -42,7 +43,7 @@ const ProductListFetchWithPost = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newProduct),
+        body: JSON.stringify({ ...newProduct, id: generateRandomStringId() }),
       });
       const data = await response.json();
       console.log("data --->", { data, response });

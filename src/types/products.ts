@@ -1,8 +1,8 @@
 export interface ProductType {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    category: string;
-    inStock: boolean;
+  id: number | string;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  inStock: boolean;
 }

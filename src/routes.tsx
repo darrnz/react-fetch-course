@@ -6,6 +6,8 @@ import ProductListButton from "./components/ProductListFetchButton";
 import path from "path";
 import ProductListAxios from "./components/ProductListFetchBasicAxios";
 import ProductListWithCategory from "./components/ProductListFetchPostAxios";
+import ProductListWithProductAPI from "./components/ListWithProductApiAndCustomHook/ProductList";
+import ProductManager from "./components/ListWithApiCallHook/ProductList";
 
 const routes = [
   {
@@ -16,6 +18,8 @@ const routes = [
   { path: "/products-fetch-callback", element: <ProductListButton /> },
   { path: "/products-axios-basic", element: <ProductListAxios /> },
   { path: "/products-axios-post", element: <ProductListWithCategory /> },
+  { path: "/products-product-api", element: <ProductListWithProductAPI /> },
+  { path: "/products-api-call-hook", element: <ProductManager /> },
   { path: "*", element: <h1>Not Found</h1> },
 ];
 

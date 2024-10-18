@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Wireless Mouse",
-      "description": "A smooth, comfortable wireless mouse with long battery life.",
-      "price": 29.99,
-      "category": "Electronics",
-      "inStock": true
-    },
-    {
       "id": "2",
       "name": "Bluetooth Speaker",
       "description": "Portable Bluetooth speaker with deep bass and clear sound.",
@@ -25,27 +17,11 @@
       "inStock": true
     },
     {
-      "id": "4",
-      "name": "Smartwatch",
-      "description": "Fitness-focused smartwatch with heart-rate monitor and GPS.",
-      "price": 249.99,
-      "category": "Wearables",
-      "inStock": true
-    },
-    {
-      "id": "5",
-      "name": "Electric Kettle",
-      "description": "Fast boiling electric kettle with temperature control settings.",
-      "price": 39.99,
-      "category": "Home Appliances",
-      "inStock": false
-    },
-    {
       "id": 0,
       "name": "product",
       "description": "descr",
-      "price": "3",
-      "category": "cat",
+      "price": "1000",
+      "category": "Wearabled",
       "inStock": false
     }
   ]

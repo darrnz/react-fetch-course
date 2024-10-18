@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ProductType } from "../types/products";
 import { jsonUrl } from "../constants";
-import { useNavigate, useSearchParams } from "react-router-dom";
 import ListComponent from "./ListComponent";
 
 const ProductListWithCategory = () => {
