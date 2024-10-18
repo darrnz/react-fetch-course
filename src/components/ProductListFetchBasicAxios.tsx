@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { ProductType } from '../types/products';
-import { jsonUrl } from '../constants';
-import ListComponent from './ListComponent';
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { ProductType } from "../types/products";
+import { jsonUrl } from "../constants";
+import ListComponent from "./ListComponent";
 
 const ProductListAxios = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -14,11 +14,11 @@ const ProductListAxios = () => {
     setLoading(true);
     try {
       const response = await axios.get(jsonUrl);
-      console.log('data --->', response.data);
+      console.log("data --->", response.data);
       setProducts(response.data);
       setLoading(false);
     } catch (error) {
-      setError('Error fetching products - ' + error);
+      setError("Error fetching products - " + error);
       setLoading(false);
     }
   };
@@ -26,9 +26,6 @@ const ProductListAxios = () => {
   useEffect(() => {
     fetchProducts();
   }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div style={{ color: 'red' }}>{error}</div>;
 
   return (
     <div>

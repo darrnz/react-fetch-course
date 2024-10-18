@@ -30,10 +30,6 @@ const ProductList = () => {
 
   console.log("products --->", products);
 
-  if (loading) return <div>Loading...</div>;
-  if (error)
-    return <div style={{ fontWeight: "bold", color: "red" }}>{error}</div>;
-
   return (
     <div>
       <h1>Product List</h1>

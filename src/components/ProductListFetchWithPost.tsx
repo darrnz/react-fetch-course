@@ -63,10 +63,6 @@ const ProductListFetchWithPost = () => {
 
   console.log("products --->", products);
 
-  if (loading) return <div>Loading...</div>;
-  if (error)
-    return <div style={{ fontWeight: "bold", color: "red" }}>{error}</div>;
-
   return (
     <div>
       <h1>Product List</h1>
@@ -126,7 +122,6 @@ const ProductListFetchWithPost = () => {
         </form>
       </section>
       <section>
-        <button type="button">Fetch Products</button>
         <div>
           <ListComponent products={products} loading={loading} error={error} />
         </div>
