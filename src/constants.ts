@@ -1,0 +1,1 @@
+export const jsonUrl = "https://supreme-computing-machine-55qrpx5p74w27j9q-3000.app.github.dev/products";
