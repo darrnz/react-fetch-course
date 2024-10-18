@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { ProductType } from '../types/products';
 import { jsonUrl } from '../constants';
+import ListComponent from './ListComponent';
 
 const ProductListAxios = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -32,13 +33,9 @@ const ProductListAxios = () => {
   return (
     <div>
       <h1>Product List (Axios)</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - {product.price}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <ListComponent products={products} loading={loading} error={error} />
+      </div>
     </div>
   );
 };

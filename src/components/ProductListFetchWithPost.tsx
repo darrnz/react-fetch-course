@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { ProductType } from "../types/products";
 import { jsonUrl } from "../constants";
+import ListComponent from "./ListComponent";
 
 const ProductListFetchWithPost = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -77,7 +78,11 @@ const ProductListFetchWithPost = () => {
             e.preventDefault();
             addProduct();
           }}
-          style={{ display: "flex", flexDirection: "row" , alignItems: "center"}}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
         >
           <label>
             Name:
@@ -122,13 +127,9 @@ const ProductListFetchWithPost = () => {
       </section>
       <section>
         <button type="button">Fetch Products</button>
-        <ul>
-          {products.map((product) => (
-            <li key={product.id}>
-              {product.name} - {product.price}
-            </li>
-          ))}
-        </ul>
+        <div>
+          <ListComponent products={products} loading={loading} error={error} />
+        </div>
       </section>
     </div>
   );

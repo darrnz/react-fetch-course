@@ -1,52 +1,49 @@
-import { useCallback, useEffect, useState } from "react"
-import { ProductType } from "../types/products"
-import { jsonUrl } from "../constants"
-
+import { useCallback, useEffect, useState } from "react";
+import { ProductType } from "../types/products";
+import { jsonUrl } from "../constants";
+import ListComponent from "./ListComponent";
 
 const ProductList = () => {
-    const [products, setProducts] = useState<ProductType[]>([])
-    const [loading, setLoading] = useState<boolean>(false)
-    const [error, setError] = useState<string | null>(null)
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
-    const fetchProducts = async () => {
-        setLoading(true)
-        try {
-            const response = await fetch(jsonUrl, {
-                // mode: 'no-cors',
-            })
-            const data = await response.json()
-            console.log('data --->', { data, response })
-            setProducts(data)
-            setLoading(false)
-        } catch (error) {
-            setError('Error fetching products - ' + error)
-            setLoading(false)
-        }
+  const fetchProducts = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(jsonUrl, {
+        // mode: 'no-cors',
+      });
+      const data = await response.json();
+      console.log("data --->", { data, response });
+      setProducts(data);
+      setLoading(false);
+    } catch (error) {
+      setError("Error fetching products - " + error);
+      setLoading(false);
     }
+  };
 
-    useEffect(() => {
-        fetchProducts()
-    }, [])
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
-    console.log('products --->', products)
+  console.log("products --->", products);
 
-    if (loading) return <div>Loading...</div>
-    if (error) return <div style={{ fontWeight: 'bold', color: 'red' }}>{error}</div>
+  if (loading) return <div>Loading...</div>;
+  if (error)
+    return <div style={{ fontWeight: "bold", color: "red" }}>{error}</div>;
 
-    return (
+  return (
+    <div>
+      <h1>Product List</h1>
+      <section>
         <div>
-            <h1>Product List</h1>
-            <section>
-                <ul>
-                    {products && products.map(product => (
-                        <li key={product.id}>
-                            {product.name} - {product.price}
-                        </li>
-                    ))}
-                </ul>
-            </section>
+          <ListComponent products={products} loading={loading} error={error} />
         </div>
-    )
-}
+      </section>
+    </div>
+  );
+};
 
-export default ProductList
+export default ProductList;
