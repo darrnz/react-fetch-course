@@ -1,50 +1,63 @@
-# React + TypeScript + Vite
+# React and Vite Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Fetch Implementations with Vite
 
-Currently, two official plugins are available:
+This repository showcases a simple UI demonstrating various ways to implement data fetching in a React application. It covers everything from using the native TypeScript `fetch` API directly within components to more abstracted approaches like custom hooks for Axios configuration and service-based product API hooks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+- **Node.js** (version 12 or higher)
+- **npm** (Node Package Manager)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone the repository:**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+  git clone https://github.com/your-username/your-repo.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Navigate to the project directory:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd your-repo
 ```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+2. **Running the Application**
+   2.1 Running the Frontend
+   To start the React frontend application, run:
+
+```bash
+npx vite
+```
+
+This will launch the app, and you can view it in your browser at http://localhost:5173/ (or the port specified by Vite).
+
+2.2 Running the JSON Server
+To start the JSON server, run:
+
+```bash
+npm run server
+```
+
+The JSON server will start on port 3000. You can access the API endpoints at http://localhost:3000.
+
+2.2.2 Running on GitHub Codespaces
+If you're running this project on GitHub Codespaces, you'll need to adjust the port settings to make the JSON server accessible:
+
+Click on the Ports tab in the Codespaces interface.
+Locate Port 3000 (used by the JSON server).
+Right-click on the port and select Port Visibility.
+Change the visibility setting to Public.
+This allows external access to the JSON server running on port 3000.
+
+License
+MIT
+
+This updated README includes a **Features** section that highlights the different data fetching implementations in your React application. Let me know if there's anything else you'd like to add or modify!

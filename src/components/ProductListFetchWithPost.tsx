@@ -21,10 +21,7 @@ const ProductListFetchWithPost = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://supreme-computing-machine-55qrpx5p74w27j9q-3000.app.github.dev/products",
-        {
-          // mode: 'no-cors',
-        }
+        "https://supreme-computing-machine-55qrpx5p74w27j9q-3000.app.github.dev/products"
       );
       const data = await response.json();
       console.log("data --->", { data, response });
